@@ -3,53 +3,76 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/starter.css">
-    <title>Bootstrap npm starter</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Bouillon Bouthier, cabinet d'architectes</title>
   </head>
   <body>
-    <div class="col-md-5 mx-auto">
-      <h1>Agence Architectes</h1>
-      <p>You've successfully loaded up the Bootstrap npm starter project!</p>
-      <p>If this button looks blue and the text purple, you've done it.</p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Click me!</button>
-
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Success!</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              If you're seeing this modal after clicking the button on the page, Bootstrap's CSS and JS are both working properly.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+      <section class="p-0 m-0 mx-0 align-items-center d-flex" style="min-height: 100vh; background-size: cover; background-image: url(&quot;/img/fond.svg&quot;);" data-depth='0.3' data-type='parallax'>
+        <div class="container-fluid bg-white-75 h-100" data-depth='1' data-type='parallax'>
+          <div class="row  justify-content-center align-items-center d-flex-row text-center h-100">
+            <div class="col-12 col-md-8  h-75 ">
+              <img alt="image" class="w-25 d-block mx-auto img-fluid pt-5" src="img/logo-01.svg">
+              <h1 class=" mb-4 mt-4">Site en construction </h1>
+              <p class="lead  text-dark mb-3">Une question?</p>
+              <p>
+                <a href="#" class="btn btn-outline-light btn-lg text-dark border-white btn-light" id="email0" onmouseover="javascript:EcrireMail(0);">Contactez-nous</a>
+              </p>
+              <div class="btn-container-wrapper p-relative d-block  zindex-1">
+                <a class="btn btn-outline-light border-0 btn-lg pr-2 pl-2 pt-3 pb-3  mt-md-5  scroll align-self-center  " href="#section-1">
+                  <i class="fa fa-angle-down fa-2x  "></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section class="mb-0 mt-0">
+        <div class="footer ">
+          <div class="pb-4">
+            <div class="container">
+              <div class="row ">
+                <div class="col-xs-6 col-sm-3 border-start mx-2 border-5 border-yellow">
+                  <address class="text-dark my-auto">
+                    <div class="text-black-50 pb-2">Bouillon Bouthier
+                      <br />SAS d'architecture</div>
+                    14, rue Jeanne d’Arc
+                    <br /> 88190 GOLBEY
+                    <div class="mt-1">Tél. 03 29 31 39 69</div>
+                  </address>
+                </div>
+              </div>
+              <hr>
+              <div class="row f-flex justify-content-between m-0" style="justify-content: space-between;">
+                <div class="col-md-8 text-xs-center  text-left p-0">
+                  <p class="mt-2  text-muted"> © Copyright Bouillon architectes associés 2021 |
+                    <a class="text-secondary " href="https://jsmondy.fr/">Création JS Mondy</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <hr class="my-5">
-
-      <h2>Adding Bootstrap Icons</h2>
-      <p><a href="https://icons.getbootstrap.com">Bootstrap Icons</a> are included with the SVG sprite here, but there are other <a href="https://icons.getbootstrap.com/#usage">usage options</a>, too. They're styleable with text utilities and more.</p>
-
-      <svg class="bi text-danger" width="32" height="32">
-        <use xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#heart-fill"/>
-      </svg>
-      <svg class="bi text-dark" width="32" height="32">
-        <use xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#toggles"/>
-      </svg>
-      <svg class="bi text-primary" width="32" height="32">
-        <use xlink:href="node_modules/bootstrap-icons/bootstrap-icons.svg#shop"/>
-      </svg>
-    </div>
+      <!-- jQuery is required -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script type="module" src="assets/js/starter.js"></script>
+    <script>
+      function EcrireMail(Id) {
+          var Sujet = "?subject=Demande%20de%20renseignements";
+          var Adresses = new Array;
+          Adresses[0] = "gmail.com;cabinetbouillon";
+          document.getElementById("email" + Id).href = "mailto:" +
+              Adresses[Id].substring(Adresses[Id].indexOf(";") + 1) + "@" +
+              Adresses[Id].substr(0, Adresses[Id].indexOf(";")) + Sujet;
+      }
+
+  </script>
   </body>
 </html>
